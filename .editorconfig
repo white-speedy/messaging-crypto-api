@@ -1,0 +1,3 @@
+[{*.yaml, *.yml, *.json, *.kts}]
+indent_style = space
+indent_size = 2
