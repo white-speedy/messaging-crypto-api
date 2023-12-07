@@ -1,0 +1,47 @@
+openapi: 3.0.3
+info:
+  title: API Title
+  version: '1.0'
+  description: ' edited with https://editor-next.swagger.io'
+servers:
+  - url: https://api.server.test/v1
+paths: {}
+components:
+  schemas:
+    Position:
+      type: string
+      enum:
+        - LONG
+        - SHORT
+    Exchange:
+      type: string
+      enum:
+        - BINANCE
+        - KUCOIN
+        - OKEX
+        - KRAKEN
+    TradeMessage:
+      type: object
+      properties:
+        exchange:
+          $ref: '#/components/schemas/Exchange'
+        base:
+          type: string
+        quote:
+          type: string
+        position:
+          $ref: '#/components/schemas/Position'
+        id:
+          type: string
+        ask:
+          type: number
+          format: decimal
+        target:
+          type: number
+          format: decimal
+        tp:
+          type: number
+          format: decimal
+        sl:
+          type: number
+          format: decimal
